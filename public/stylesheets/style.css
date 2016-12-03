@@ -1,0 +1,90 @@
+html,
+body {
+  text-align: center;
+  margin: 0;
+}
+
+body {
+  background-color: #AEC6CF;
+}
+
+#wrapper {
+  margin-top: 20px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+}
+
+h1 {
+  margin-top: 5px;
+  color: white;
+}
+
+#menu {
+  right: 0;
+  top: 0;
+  width: 100%;
+  position: absolute;
+  padding-top: 5px;
+  padding-right: 5px;
+}
+
+#navigate {
+  display: none;
+  position: fixed;
+  left: 0;
+  width: 100%;
+}
+
+.input {
+  width: 28%;
+  background-color: #000000;
+}
+
+table td {
+  font-size: 16px;
+  border: 1px solid #f9f9f9;
+}
+
+table {
+  margin-bottom: 48px;
+  background-color: black;
+  color: white;
+  width: 100%;
+  border-radius: 5px;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+table th {
+  background-color: #186a7e;
+  color: #f9f9f9;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #f9f9f9;
+}
+
+.time {
+  background-color: #363636;
+  color: #f9f9f9;
+  padding: 5px;
+}
+
+#header {
+  padding-top: 5px;
+  padding-bottom: 1px;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.button {
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 5px;
+  color: white;
+  width: 100%;
+  height: 4%;
+  transition: 0.5s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
