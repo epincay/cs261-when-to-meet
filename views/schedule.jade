@@ -1,3 +1,27 @@
 extends layout
 
 block content
+doctype html
+html
+	head
+		title Brittany Hill - CIT 261 Mobile Application
+		meta(charset='UTF-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		link(rel='stylesheet', type='text/css', href='main.css')
+		script(type='text/javascript', src='calendar.js')
+	body
+		h1
+			| Schedule
+			p Please select begining day
+			select#day(autofocus='', required='')
+				option(value='1') Monday
+				option(value='2') Tuesday
+				option(value='3') Wednesday
+				option(value='4') Thursday
+				option(value='5') Friday
+				option(value='6') Saturday
+				option(value='0') Sunday
+			button(onclick='makeTable()') Make Calendar
+			p#result
+			#wrapper
+				table#output
