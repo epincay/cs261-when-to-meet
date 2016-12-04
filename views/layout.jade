@@ -9,7 +9,11 @@ html
       a#menu(style='height: 50px; width: 50px;')
         img(style='height: 50px; width: 50px;', src='/images/menu.png')
       #navigate
-        .button Home
-        .button My Meetings
-        .button Tutorial
+        a(href='/')
+          .button Home
+        a(href='results')
+          .button My Meetings
+        a(href='tutorials')
+          .button Tutorial
+  script(type='text/javascript', src='/javascripts/layout.js')
   block content

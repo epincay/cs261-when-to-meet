@@ -1,33 +1,46 @@
 var times = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00"]
 var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday" };
 window.onload = function() {
-    addDays();
-    for (var i = 0; i < times.length; i++) {
-        addTimes(times[i]);
-    }
-
-    listeners();
-    var open = false;
-    document.getElementById("menu").onclick = function() {
-        if (open === false) {
-            document.getElementById("navigate").style.display = "block";
-            open = true;
-        } else {
-            document.getElementById("navigate").style.display = "none";
-            open = false;
-        }
-    };
+    makeTable();
 };
 
-function addDays() {
+
+
+
+function makeTable() {
+
+    var table = document.createElement("table");
+    var numDays = displayDays();
+    table = addDays(table, numDays);
+    for (var i = 0; i < times.length; i++) {
+        table = addTimes(times[i], table);
+    }
+    var rep = document.getElementById("wrapper").querySelector("table");
+    document.getElementById("wrapper").replaceChild(table, rep);
+    listeners();
+}
+
+function displayDays(){
+    var numDays = document.getElementById("day").value;
+    var day = [];
+    for (var i = 0; i < 3; i++, numDays++) {
+        if (numDays > 6) {
+            numDays = 0;
+        }
+        day.push(numDays);
+    }
+    return day;
+}
+
+function addDays(table, day) {
     var placehold = document.createElement("th");
     var day1 = document.createElement("th");
     var day2 = document.createElement("th");
     var day3 = document.createElement("th");
     var tr = document.createElement("tr");
-    var day1Text = document.createTextNode(days[1]);
-    var day2Text = document.createTextNode(days[2]);
-    var day3Text = document.createTextNode(days[3]);
+    var day1Text = document.createTextNode(days[day[0]]);
+    var day2Text = document.createTextNode(days[day[1]]);
+    var day3Text = document.createTextNode(days[day[2]]);
     day1.appendChild(day1Text);
     day2.appendChild(day2Text);
     day3.appendChild(day3Text);
@@ -35,11 +48,11 @@ function addDays() {
     tr.appendChild(day1);
     tr.appendChild(day2);
     tr.appendChild(day3);
-    var output = document.getElementById("output");
-    output.appendChild(tr);
+    table.appendChild(tr);
+    return table;
 }
 
-function addTimes(tempTime) {
+function addTimes(tempTime, table) {
     var time = document.createElement("td");
     var day1 = document.createElement("td");
     var day2 = document.createElement("td");
@@ -58,8 +71,8 @@ function addTimes(tempTime) {
     tr.appendChild(day1);
     tr.appendChild(day2);
     tr.appendChild(day3);
-    var output = document.getElementById("output");
-    output.appendChild(tr);
+    table.appendChild(tr);
+    return table;
 }
 
 function listeners() {
