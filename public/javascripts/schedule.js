@@ -12,7 +12,7 @@ function makeTable() {
     var pos = 0;
     for (var i = 0; i < times.length; i++) {
         table = addTimes(times[i], table, pos);
-        pos += 3;
+        pos++;
     }
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);
