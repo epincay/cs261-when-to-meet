@@ -1,4 +1,4 @@
-document.querySelector("img").onload = function() {
+window.onload = function() {
     var open = false;
     document.getElementById("menu").onclick = function () {
         console.log("click");
