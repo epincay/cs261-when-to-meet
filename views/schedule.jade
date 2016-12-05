@@ -1,8 +1,7 @@
 extends layout
 
 block content
-    script(type='text/javascript', src='/javascripts/results.js')
-    body
+    script(type='text/javascript', src='/javascripts/schedule.js')
         h1
             | Schedule
             p Please select begining day
@@ -17,4 +16,5 @@ block content
             button(onclick='makeTable()') Enter
             p#result
             #wrapper
-                table#output
+                form#form(method='post')
+                    table#output

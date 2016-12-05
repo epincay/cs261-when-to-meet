@@ -20,7 +20,7 @@ function makeTable() {
 }
 
 function displayDays(){
-    var numDays = 3;
+    var numDays = document.getElementById("day").value;
     var day = [];
     for (var i = 0; i < 3; i++, numDays++) {
         if (numDays > 6) {
@@ -91,6 +91,7 @@ function listeners() {
     console.log(x.length);
     for (var i = 0; i < x.length; i++) {
         x[i].onclick = function() {
+            console.log(this.style.backgroundColor);
             if (this.style.backgroundColor == "#000000" || this.style.backgroundColor == "rgb(0, 0, 0)") {
                 this.querySelector("input").value = this.querySelector("input").name;
                 this.style.backgroundColor = "#4fff63";
