@@ -3,6 +3,9 @@ var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4"
 
 window.onload = function() {
     var obj = new XMLHttpRequest();
+    var urlID = "http://example.com/results?id=DSF123";
+    var id = urlID.substring(urlID.lastIndexOf('=') + 1);
+    alert(id);
     var url = new URL("https://goldingaustin.github.io/CIT261-Group-Project/json/test.json");
     obj.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {

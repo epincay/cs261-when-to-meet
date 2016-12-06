@@ -8,7 +8,8 @@ window.onload = function() {
 function makeTable() {
     var table = document.createElement("table");
     var numDays = displayDays();
-    table = addDays(table, numDays);
+    var dates = calculateDates(numDays[0]);
+    table = addDays(table, numDays, dates);
     var pos = 0;
     for (var i = 0; i < times.length; i++) {
         table = addTimes(times[i], table, pos);
@@ -17,6 +18,16 @@ function makeTable() {
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);
     listeners();
+}
+
+function calculateDates(numDays) {
+    var date = new Date();
+    var dates = []
+    for (var i = 0; i < 3; i++, numDays++) {
+        date.setDate(date.getDate() + (numDays - date.getDay()));
+        dates.push(date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate());
+    }
+    return dates;
 }
 
 function displayDays(){
@@ -31,18 +42,30 @@ function displayDays(){
     return day;
 }
 
-function addDays(table, day) {
+function addDays(table, day, dates) {
     var placehold = document.createElement("th");
     var day1 = document.createElement("th");
     var day2 = document.createElement("th");
     var day3 = document.createElement("th");
     var tr = document.createElement("tr");
+    var inp1 = document.createElement("input");
+    var inp2 = document.createElement("input");
+    var inp3 = document.createElement("input");
+    inp1.setAttribute("value", dates[0]);
+    inp2.setAttribute("value", dates[1]);
+    inp3.setAttribute("value", dates[2]);
+    inp1.setAttribute("type", "hidden");
+    inp2.setAttribute("type", "hidden");
+    inp3.setAttribute("type", "hidden");
     var day1Text = document.createTextNode(days[day[0]]);
     var day2Text = document.createTextNode(days[day[1]]);
     var day3Text = document.createTextNode(days[day[2]]);
     day1.appendChild(day1Text);
     day2.appendChild(day2Text);
     day3.appendChild(day3Text);
+    day1.appendChild(inp1);
+    day2.appendChild(inp2);
+    day3.appendChild(inp3);
     tr.appendChild(placehold);
     tr.appendChild(day1);
     tr.appendChild(day2);
