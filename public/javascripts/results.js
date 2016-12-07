@@ -3,16 +3,16 @@ var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4"
 
 window.addEventListener('load', function() {
     var obj = new XMLHttpRequest();
-    var urlID = "http://example.com/results?id=DSF123";
-    var id = urlID.substring(urlID.lastIndexOf('=') + 1);
-    console.log(id);
+    // var urlID = "http://example.com/results?id=AZK3DS";
+    // var id = urlID.substring(urlID.lastIndexOf('=') + 1);
+    // console.log(id);
     var url = new URL("https://goldingaustin.github.io/CIT261-Group-Project/json/test.json");
     obj.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var meetup = JSON.parse(this.responseText);
+            meetup = meetup.meetup;
             var matches = findCommon(meetup);
-            var days = parseDates(meetup);
-            makeTable(days);
+            makeTable(meetup.members[0].days[0].date);
             addMatches(matches);
         }
     };
@@ -20,15 +20,8 @@ window.addEventListener('load', function() {
     obj.send();
 });
 
-function parseDates(meetup) {
-    var day = new Date(meetup.meetup.members[0].days[0].date);
-    var firstDay = day.getDay();
-    return firstDay;
-}
-
 function findCommon(meetup) {
     var memb = [];
-    meetup = meetup.meetup;
     for (var x in meetup.members[0].days) {
         memb['day'+x] = [];
         for (var i in meetup.members) {

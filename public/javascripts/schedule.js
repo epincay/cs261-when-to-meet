@@ -8,8 +8,7 @@ window.addEventListener('load', function() {
 function makeTable() {
     var table = document.createElement("table");
     var numDays = displayDays();
-    var dates = calculateDates(numDays[0]);
-    table = addDays(table, numDays, dates);
+    table = addDays(table, numDays);
     var pos = 0;
     for (var i = 0; i < times.length; i++) {
         table = addTimes(times[i], table, pos);
@@ -18,16 +17,6 @@ function makeTable() {
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);
     listeners();
-}
-
-function calculateDates(numDays) {
-    var date = new Date();
-    var dates = []
-    for (var i = 0; i < 3; i++, numDays++) {
-        date.setDate(date.getDate() + (numDays - date.getDay()));
-        dates.push(date.getFullYear() + "-" + date.getMonth() + "-" + date.getDate());
-    }
-    return dates;
 }
 
 function displayDays(){
@@ -42,7 +31,7 @@ function displayDays(){
     return day;
 }
 
-function addDays(table, day, dates) {
+function addDays(table, day) {
     var placehold = document.createElement("th");
     var day1 = document.createElement("th");
     var day2 = document.createElement("th");
@@ -51,9 +40,9 @@ function addDays(table, day, dates) {
     var inp1 = document.createElement("input");
     var inp2 = document.createElement("input");
     var inp3 = document.createElement("input");
-    inp1.setAttribute("value", dates[0]);
-    inp2.setAttribute("value", dates[1]);
-    inp3.setAttribute("value", dates[2]);
+    inp1.setAttribute("value", day[0]);
+    inp2.setAttribute("value", day[1]);
+    inp3.setAttribute("value", day[2]);
     inp1.setAttribute("type", "hidden");
     inp2.setAttribute("type", "hidden");
     inp3.setAttribute("type", "hidden");
