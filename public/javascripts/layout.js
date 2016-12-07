@@ -1,4 +1,4 @@
-window.onload = function() {
+window.addEventListener('load', function() {
     var open = false;
     document.getElementById("menu").onclick = function () {
         console.log("click");
@@ -10,4 +10,4 @@ window.onload = function() {
             open = false;
         }
     }
-};
+});

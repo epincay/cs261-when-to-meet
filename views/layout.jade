@@ -1,20 +1,23 @@
 doctype html
 html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    #header
-      h1 When To Meet
-      a#menu(style='height: 50px; width: 50px;')
-        img(style='height: 50px; width: 50px;', src='/images/menu.png')
-      #navigate
-        a(href='/')
-          .button Home
-        a(href='results')
-          .button My Meetings
-        a(href='tutorials')
-          .button Tutorial
+    head
+        script(type='text/javascript', src='/javascripts/layout.js')
+        title= title
+        link(rel='stylesheet', href='/stylesheets/style.css')
+    body
+        #header
+            h1 When To Meet
+            a#menu(style='height: 50px; width: 50px;')
+                img(style='height: 50px; width: 50px;', src='/images/menu.png')
+            #navigate
+                a(href='/')
+                    .button Home
+                a(href='schedule')
+                    .button Schedule
+                a(href='results')
+                    .button My Meeting
+                a(href='tutorials')
+                    .button Tutorial
 
-  script(type='text/javascript', src='/javascripts/layout.js')
-  block content
+
+    block content

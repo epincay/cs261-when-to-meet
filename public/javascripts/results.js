@@ -1,11 +1,11 @@
 var times = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00"]
 var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday" };
 
-window.onload = function() {
+window.addEventListener('load', function() {
     var obj = new XMLHttpRequest();
     var urlID = "http://example.com/results?id=DSF123";
     var id = urlID.substring(urlID.lastIndexOf('=') + 1);
-    alert(id);
+    console.log(id);
     var url = new URL("https://goldingaustin.github.io/CIT261-Group-Project/json/test.json");
     obj.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -18,7 +18,7 @@ window.onload = function() {
     };
     obj.open("GET", url, true);
     obj.send();
-};
+});
 
 function parseDates(meetup) {
     var day = new Date(meetup.meetup.members[0].days[0].date);
