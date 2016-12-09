@@ -122,7 +122,7 @@ table th {
     background-color: #000;
 }
 
-/*SELECT DAY BUTTONS*/
+/*SELECT DAY MENU*/
 #week {
     width: 200px;
     visibility: hidden;
@@ -130,7 +130,6 @@ table th {
     position: absolute;
     margin-left: -48px;
     margin-top: -60px;
-    /*display: inline-block;*/
 }
 #showWeek{
     margin-top: 0px;
