@@ -14,7 +14,6 @@ function makeTable() {
     }
     var rep = document.getElementById("wrapper").querySelector("table");
     document.getElementById("wrapper").replaceChild(table, rep);
-
     listeners();
 }
 var value;
