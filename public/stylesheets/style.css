@@ -5,27 +5,29 @@ body {
 }
 
 body {
-  background-color: #AEC6CF;
+  background-color: #186a7e;
+}
+/*TEXT*/
+h1, h2, h3, h4, th {
+  color: #f9f9f9;
+  font-family: Times, Georgia, serif;
+  font-weight: normal;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 #wrapper {
   margin-top: 20px;
-  width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  width: 100%;
   display: block;
-}
-
-h1 {
-  margin-top: 5px;
-  color: white;
+  visibility: hidden;
 }
 
 #menu {
   right: 0;
   top: 0;
   width: 100%;
-  position: absolute;
+  position: relative;
   padding-top: 5px;
   padding-right: 5px;
   cursor: pointer;
@@ -38,39 +40,43 @@ h1 {
   width: 100%;
 }
 
+/*CALENDAR STYLES*/
+
 .input {
-  width: 28%;
+  /*width: 28%;*/
   background-color: #000000;
 }
 
 table td {
   font-size: 16px;
-  border: 1px solid #f9f9f9;
+  border-top: .5px solid #999;
+  border-right: 2.5px solid #999;
+  cursor: pointer;
+  padding: 0px;
+  width: 1%;
+
 }
 
 table {
   margin-bottom: 48px;
   background-color: black;
-  color: white;
+  color: #f9f9f9;
   width: 100%;
   border-radius: 5px;
   border-collapse: collapse;
-  border: 1px solid black;
 }
 
 table th {
-  background-color: #186a7e;
+  background-color: #4D8FA5;
   color: #f9f9f9;
   font-weight: bold;
-  padding: 10px;
-  cursor: pointer;
-  border: 1px solid #f9f9f9;
+  padding: 15px;
 }
 
 .time {
   background-color: #363636;
   color: #f9f9f9;
-  padding: 5px;
+  padding: 10px;
 }
 
 #header {
@@ -89,3 +95,72 @@ table th {
   transition: 0.5s;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+/*MAKE CALENDAR BUTTON*/
+#makeCal, #showWeek {
+  padding: 15px;
+  background-color: #363636;
+  color: #f9f9f9;
+  cursor: pointer;
+  box-shadow: 0 5px 10px #333;
+  font-weight: bold;
+  font-family: Arial, Verdana, sans-serif;
+  font-size: 1em;
+  width: 200px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+  margin-left: -50px;
+}
+
+#makeCal {
+  visibility: hidden;
+}
+
+#makeCal:hover, #showWeek:hover {
+  background-color: #000;
+}
+
+/*SELECT DAY MENU*/
+#week {
+  width: 200px;
+  visibility: hidden;
+  z-index: 1;
+  position: absolute;
+  margin-left: -48px;
+  margin-top: -60px;
+}
+#showWeek{
+  margin-top: 0px;
+}
+.day {
+  padding: 12px;
+  background-color: #4D8FA5;
+  box-shadow: 0 5px 10px #333;
+  width: 200px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: .9em;
+  font-family: Arial, Verdana, sans-serif;
+
+}
+.day:hover {
+  background-color: #407789;
+}
+#group {
+  width: 100px;
+  margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
