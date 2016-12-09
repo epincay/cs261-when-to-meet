@@ -6,4 +6,6 @@ block content
         form#form(method='post')
             table#output
 
+    script.
+        var meetingId = !{JSON.stringify(meetingId)};
     script(type='text/javascript', src='/javascripts/results.js')

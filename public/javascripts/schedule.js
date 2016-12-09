@@ -9,10 +9,10 @@ function makeTable() {
     var table = document.createElement("table");
     var numDays = displayDays();
     table = addDays(table, numDays);
-    var pos = 0;
+    var pos = 8;
     for (var i = 0; i < times.length; i++) {
         table = addTimes(times[i], table, pos);
-        pos++;
+        pos += .5;
     }
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);

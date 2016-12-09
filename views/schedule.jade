@@ -17,6 +17,7 @@ block content
         form#form(method='post' action='submitSchedule')
             input(type='hidden' name='meetingId' value=meetingId)
             table#output
+            input(type='text' name='name' required placeholder='Your Name')
             button(type='submit') Submit Schedule
 
     script(type='text/javascript', src='/javascripts/schedule.js')

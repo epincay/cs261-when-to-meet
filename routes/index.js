@@ -25,7 +25,7 @@ router.get('/', function (req, res, next) {
  */
 router.get('/schedule', function (req, res, next) {
     console.log("Loading schedule for meeting:", req.query["meetingId"]);
-    models.Meeting.find({ where: { displayId: req.query["meetingId"] } })
+    models.Meeting.find({ displayId: req.query["meetingId"] })
         .then(function (meeting) {
             if (!meeting) {
                 res.redirect('/');
@@ -42,7 +42,15 @@ router.get('/schedule', function (req, res, next) {
  *  - Close meeting button? Bonus feature
  */
 router.get('/results', function (req, res, next) {
-    res.render('results', { title: 'Results' });
+    console.log("Showing results for meeting:", req.query["meetingId"]);
+    models.Meeting.find({ displayId: req.query["meetingId"] })
+        .then(function (meeting) {
+            if (!meeting) {
+                res.redirect('/');
+            } else {
+                res.render('results', { title: 'Results', meetingId: req.query["meetingId"] });
+            }
+        });
 });
 
 /* GET tutorial page.
@@ -58,5 +66,7 @@ router.get('/tutorials', function (req, res, next) {
 router.post('/createMeeting', meetingService.createMeeting);
 
 router.post('/submitSchedule', meetingService.submitSchedule);
+
+router.get('/getMeetingJson', meetingService.getMeetingJson);
 
 module.exports = router;
