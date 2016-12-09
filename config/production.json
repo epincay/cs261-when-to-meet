@@ -1,0 +1,41 @@
+{
+  "db" :
+  {
+    "database" : "somi" ,
+    "username" : "root"     ,
+    "password" : "Azmm2014" ,
+    "host"     : "localhost",
+    "dialect"  : "mysql"    ,
+    "logging"  : false
+  },
+  "mods" :
+  {
+    "apps" :
+    {
+      "edvr" :
+      {
+        "email" :
+        {
+          "mandrillKey" : "RJHc8xCaNKQLyhdTd699Nw"
+        },
+        "utils" :
+        {
+          "submissionPeriodBegin" : 1,
+          "submissionPeriodEnd"   : 5
+        },
+        "db" :
+        {
+          "connectionUrl" : "mysql://root:Azmm2014@localhost/edvr"
+        }
+      }
+    },
+    "transfers" :
+    {
+      "stl"   : {},
+      "email" : 
+      {
+        "realMandrillKey" : "RJHc8xCaNKQLyhdTd699Nw"
+      }
+    }
+  }
+}

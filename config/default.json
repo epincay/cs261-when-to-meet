@@ -1,0 +1,39 @@
+{
+  "mongo": {
+    "host": "localhost",
+    "database": "whentomeet"
+  },
+  "session": {
+    "mongoUrl": "mongodb://localhost/somi",
+    "sessionSecret": "sdkjghw45kjshg7resihuf89"
+  },
+  "mods": {
+    "apps": {
+      "edvr": {
+        "email": {
+          "account": "test@test.com",
+          "mandrillKey": "F2q32sZLdO7qy72tqPatMw"
+        },
+        "utils": {
+          "submissionPeriodBegin": 1,
+          "submissionPeriodEnd": 31
+        },
+        "db": {
+          "connectionUrl": "mysql://somidev:password@localhost/edvr_dev"
+        }
+      }
+    },
+    "tools": {
+      "housing": {}
+    },
+    "transfers": {
+      "stl": {},
+      "email": {
+        "testAccount": "noreply@somiapp.com",
+        "testAccountPass": "Azmm2014",
+        "realAccount": "noreply@somiapp.com",
+        "realAccountPass": "Azmm2014"
+      }
+    }
+  }
+}
