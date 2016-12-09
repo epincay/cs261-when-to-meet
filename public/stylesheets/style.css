@@ -85,7 +85,7 @@ table th {
     background: rgba(0, 0, 0, 0.6);
 }
 
-.button {
+/*.button {
     text-decoration: none;
     border: 1px solid white;
     padding: 5px;
@@ -94,10 +94,9 @@ table th {
     height: 4%;
     transition: 0.5s;
     background-color: rgba(0, 0, 0, 0.5);
-}
+}*/
 
-/*MAKE CALENDAR BUTTON*/
-#makeCal, #showWeek {
+.button{
     padding: 15px;
     background-color: #363636;
     color: #f9f9f9;
@@ -110,47 +109,6 @@ table th {
     border-radius: 8px;
     margin-top: 10px;
     position: relative;
-    z-index: 1;
-    margin-left: -50px;
-}
-
-#makeCal {
-    visibility: hidden;
-}
-
-#makeCal:hover, #showWeek:hover {
-    background-color: #000;
-}
-
-/*SELECT DAY MENU*/
-#week {
-    width: 200px;
-    visibility: hidden;
-    z-index: 1;
-    position: absolute;
-    margin-left: -48px;
-    margin-top: -60px;
-}
-#showWeek{
-    margin-top: 0px;
-}
-.day {
-    padding: 12px;
-    background-color: #4D8FA5;
-    box-shadow: 0 5px 10px #333;
-    width: 200px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: .9em;
-    font-family: Arial, Verdana, sans-serif;
-
-}
-.day:hover {
-    background-color: #407789;
-}
-#group {
-    width: 100px;
-    margin: auto;
 }
 
 
