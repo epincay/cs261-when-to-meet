@@ -24,13 +24,13 @@ router.get('/', function (req, res, next) {
 router.get('/schedule', function (req, res, next) {
     res.render('schedule', { title: 'Schedule' });
 });
-
 /* GET results page.
  * This page will contain the following:
  *  - Table of users and selected times
  *  - Comment section? Bonus feature
  *  - Close meeting button? Bonus feature
  */
+
 router.get('/results', function (req, res, next) {
     res.render('results', { title: 'Results' });
 });

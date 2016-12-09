@@ -4,24 +4,41 @@ block content
 doctype html
 html
 	head
-		title Brittany Hill - CIT 261 Mobile Application
-		meta(charset='UTF-8')
-		meta(name='viewport', content='width=device-width, initial-scale=1.0')
-		link(rel='stylesheet', type='text/css', href='main.css')
+		link(rel='stylesheet', type='text/css', href='style.css')
 		script(type='text/javascript', src='calendar.js')
+		script(type='text/javascript', src='mobileTable.js')
+		script.
+			function showWeek() {
+				if (document.getElementById("week").style.visibility == "hidden") {
+					document.getElementById("week").style.visibility = "visible";
+					document.getElementById("makeCal").style.visibility = "visible";
+				}
+				else {
+				document.getElementById("week").style.visibility = "hidden";
+				}
+			}
+			function makeCalendar() {
+				document.getElementById("wrapper").style.visibility = "visible";
+			makeTable();
+			}
 	body
+		img(src='whentomeetLogo.png', style='width: 100px; margin-top: 20px;')
 		h1
-			| Schedule
-			p Please select begining day
-			select#day(autofocus='', required='')
-				option(value='1') Monday
-				option(value='2') Tuesday
-				option(value='3') Wednesday
-				option(value='4') Thursday
-				option(value='5') Friday
-				option(value='6') Saturday
-				option(value='0') Sunday
-			button(onclick='makeTable()') Make Calendar
+			| Your Schedule
+			br
+			#showWeek(onclick='showWeek()') Select Starting Day
+			#makeCal(onclick='makeCalendar()') Make Calendar
+			#week
+				.day(onclick="setValue('0')") Sunday
+				.day(onclick="setValue('1')") Monday
+				.day(onclick="setValue('2')") Tuesday
+				.day(onclick="setValue('3')") Wednesday
+				.day(onclick="setValue('4')") Thursday
+				.day(onclick="setValue('5')") Friday
+				.day(onclick="setValue('6')") Saturday
 			p#result
-			#wrapper
-				table#output
+			form
+				#wrapper
+					table#output
+						form#form(method='post')
+
