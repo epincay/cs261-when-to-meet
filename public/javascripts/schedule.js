@@ -43,6 +43,9 @@ function addDays(table, day) {
     inp1.setAttribute("value", day[0]);
     inp2.setAttribute("value", day[1]);
     inp3.setAttribute("value", day[2]);
+    inp1.setAttribute("name", "day0");
+    inp2.setAttribute("name", "day1");
+    inp3.setAttribute("name", "day2");
     inp1.setAttribute("type", "hidden");
     inp2.setAttribute("type", "hidden");
     inp3.setAttribute("type", "hidden");
