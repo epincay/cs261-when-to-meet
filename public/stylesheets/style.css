@@ -7,7 +7,22 @@ body {
 body {
   background-color: #186a7e;
 }
-/*TEXT*/
+
+#wrapper {
+  margin-top: 20px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  display: block;
+}
+
+#headWrapper {
+  width: 40%;
+  margin-left: 30%;
+  margin-right: 30%;
+  display: block;
+}
+
 h1, h2, h3, h4, th {
   color: #f9f9f9;
   font-family: Times, Georgia, serif;
@@ -16,18 +31,16 @@ h1, h2, h3, h4, th {
   padding-bottom: 10px;
 }
 
-#wrapper {
-  margin-top: 20px;
-  width: 100%;
-  display: block;
-  visibility: hidden;
+h1 {
+  margin-top: 5px;
+  color: white;
 }
 
 #menu {
   right: 0;
   top: 0;
   width: 100%;
-  position: relative;
+  position: absolute;
   padding-top: 5px;
   padding-right: 5px;
   cursor: pointer;
@@ -40,10 +53,8 @@ h1, h2, h3, h4, th {
   width: 100%;
 }
 
-/*CALENDAR STYLES*/
-
 .input {
-  /*width: 28%;*/
+  width: 28%;
   background-color: #000000;
 }
 
@@ -51,10 +62,6 @@ table td {
   font-size: 16px;
   border-top: .5px solid #999;
   border-right: 2.5px solid #999;
-  cursor: pointer;
-  padding: 0px;
-  width: 1%;
-
 }
 
 table {
@@ -64,6 +71,7 @@ table {
   width: 100%;
   border-radius: 5px;
   border-collapse: collapse;
+  /*border: 1px solid black;*/
 }
 
 table th {
@@ -71,18 +79,20 @@ table th {
   color: #f9f9f9;
   font-weight: bold;
   padding: 15px;
+  cursor: pointer;
+  /*border: 1px solid #f9f9f9;*/
 }
 
 .time {
   background-color: #363636;
   color: #f9f9f9;
-  padding: 10px;
+  padding: 5px;
 }
 
 #header {
   padding-top: 5px;
   padding-bottom: 1px;
-  background: rgba(0, 0, 0, 0.6);
+  /*background: rgba(0, 0, 0, 0.6);*/
 }
 
 .button {
@@ -98,7 +108,7 @@ table th {
 
 /*MAKE CALENDAR BUTTON*/
 #makeCal, #showWeek {
-  padding: 15px;
+  padding: 1%;
   background-color: #363636;
   color: #f9f9f9;
   cursor: pointer;
@@ -106,12 +116,12 @@ table th {
   font-weight: bold;
   font-family: Arial, Verdana, sans-serif;
   font-size: 1em;
-  width: 200px;
+  width: 30%;
   border-radius: 8px;
   margin-top: 10px;
-  position: relative;
-  z-index: 1;
-  margin-left: -50px;
+  display: block;
+  margin-left: 34%;
+  margin-right: 36%;
 }
 
 #makeCal {
@@ -124,21 +134,18 @@ table th {
 
 /*SELECT DAY MENU*/
 #week {
-  width: 200px;
+  width: 30%;
   visibility: hidden;
-  z-index: 1;
-  position: absolute;
-  margin-left: -48px;
-  margin-top: -60px;
+  margin-bottom: 10px;
 }
 #showWeek{
   margin-top: 0px;
 }
-.day {
+#week, .day {
   padding: 12px;
   background-color: #4D8FA5;
   box-shadow: 0 5px 10px #333;
-  width: 200px;
+  width: 25%;
   cursor: pointer;
   font-weight: bold;
   font-size: .9em;
@@ -152,15 +159,3 @@ table th {
   width: 100px;
   margin: auto;
 }
-
-
-
-
-
-
-
-
-
-
-
-

@@ -35,7 +35,7 @@ function findCommon(meetup) {
     for (var x = 0; x < meetup.members[0].days.length; x++) {
         var compare = memb['day'+x].shift().reduce(function(matches, y) {
             if (matches.indexOf(y) === -1 && memb['day'+x].every(function(z) {
-                return z.indexOf(y) !== -1;
+                    return z.indexOf(y) !== -1;
                 })) matches.push(y);
             return matches;
         }, []);
@@ -70,6 +70,7 @@ function displayDays(firstDay){
 
 function addDays(table, day) {
     var placehold = document.createElement("th");
+    placehold.style.width = "15%";
     var day1 = document.createElement("th");
     var day2 = document.createElement("th");
     var day3 = document.createElement("th");

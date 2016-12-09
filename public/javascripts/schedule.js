@@ -1,9 +1,19 @@
-var times = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00"];
+var times = ["8:00", "8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "12:30", "1:00", "1:30", "2:00", "2:30", "3:00", "3:30", "4:00", "4:30", "5:00", "5:30", "6:00", "6:30", "7:00", "7:30", "8:00"]
 var days = { "0": "Sunday", "1": "Monday", "2": "Tuesday", "3": "Wednesday", "4": "Thursday", "5": "Friday", "6": "Saturday" };
-window.addEventListener('load', function() {
-    makeTable();
-});
 
+function showWeek() {
+    if (document.getElementById("week").style.visibility == "hidden") {
+        document.getElementById("week").style.visibility = "visible";
+        document.getElementById("makeCal").style.visibility = "visible";
+    }
+    else {
+        document.getElementById("week").style.visibility = "hidden";
+    }
+}
+function makeCalendar() {
+    document.getElementById("wrapper").style.visibility = "visible";
+    makeTable();
+}
 
 function makeTable() {
     var table = document.createElement("table");
@@ -20,7 +30,8 @@ function makeTable() {
 }
 
 function displayDays(){
-    var numDays = document.getElementById("day").value;
+    var numDays = document.getElementById("week").value;
+    document.getElementById("week").style.visibility = "hidden";
     var day = [];
     for (var i = 0; i < 3; i++, numDays++) {
         if (numDays > 6) {
@@ -33,6 +44,7 @@ function displayDays(){
 
 function addDays(table, day) {
     var placehold = document.createElement("th");
+    placehold.style.width = "15%";
     var day1 = document.createElement("th");
     var day2 = document.createElement("th");
     var day3 = document.createElement("th");

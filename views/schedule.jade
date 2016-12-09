@@ -2,17 +2,19 @@ extends layout
 
 block content
     h1 Schedule
-    p Please select begining day
-    select#day(autofocus='', required='')
-        option(value='1') Monday
-        option(value='2') Tuesday
-        option(value='3') Wednesday
-        option(value='4') Thursday
-        option(value='5') Friday
-        option(value='6') Saturday
-        option(value='0') Sunday
-    button(onclick='makeTable()') Enter
-    p#result
+    #headWrapper
+        p Please select begining day
+        select#week(style="visibility: hidden" autofocus='', required='')
+            option.day(value='1') Monday
+            option.day(value='2') Tuesday
+            option.day(value='3') Wednesday
+            option.day(value='4') Thursday
+            option.day(value='5') Friday
+            option.day(value='6') Saturday
+            option.day(value='0') Sunday
+        #showWeek(onclick='showWeek()') Select Starting Day
+        #makeCal(onclick='makeCalendar()') Make Calendar
+        p#result
     #wrapper
         form#form(method='post' action='submitSchedule')
             input(type='hidden' name='meetingId' value=meetingId)
