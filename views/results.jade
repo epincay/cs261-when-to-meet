@@ -1,3 +1,11 @@
 extends layout
 
 block content
+    h1 Available Times to Meet
+    #wrapper
+        form#form(method='post')
+            table#output
+
+    script.
+        var meetingId = !{JSON.stringify(meetingId)};
+    script(type='text/javascript', src='/javascripts/results.js')
