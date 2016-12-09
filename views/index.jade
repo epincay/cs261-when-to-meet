@@ -3,12 +3,12 @@ extends layout
 block content
     h2 Welcome to #{title}
     h3 Please enter the name of your meeting to begin
-    form#newMeet
-        input#meetingName
+    form#newMeet(method="post" action="createMeeting")
+        input#meetingName(name="meetingName" required)
         input#create(type="submit")
     h3 Or search for a meeting by entering the Meeting ID below
-    form#searchMeet
-        input#meetingID
+    form#searchMeet(method="get" action="results")
+        input#meetingID(name="meetingId" required)
         input#search(type="submit")
 
 

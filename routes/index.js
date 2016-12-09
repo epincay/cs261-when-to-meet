@@ -1,5 +1,7 @@
-var express = require('express');
-var router  = express.Router();
+var express        = require('express');
+var router         = express.Router();
+var meetingService = require('../services/meeting.service');
+var models         = require('../models/index');
 
 /* GET home page.
  * This page will contain the following:
@@ -22,7 +24,15 @@ router.get('/', function (req, res, next) {
  *  - Comment section? Bonus feature
  */
 router.get('/schedule', function (req, res, next) {
-    res.render('schedule', { title: 'Schedule' });
+    console.log("Loading schedule for meeting:", req.query["meetingId"]);
+    models.Meeting.find({ where: { displayId: req.query["meetingId"] } })
+        .then(function (meeting) {
+            if (!meeting) {
+                res.redirect('/');
+            } else {
+                res.render('schedule', { title: 'Schedule', meetingId: req.query["meetingId"] });
+            }
+        });
 });
 
 /* GET results page.
@@ -43,5 +53,10 @@ router.get('/results', function (req, res, next) {
 router.get('/tutorials', function (req, res, next) {
     res.render('tutorials', { title: 'Tutorials' });
 });
+
+// Creates a new meeting based on name passed in.
+router.post('/createMeeting', meetingService.createMeeting);
+
+router.post('/submitSchedule', meetingService.submitSchedule);
 
 module.exports = router;
