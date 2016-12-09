@@ -45,8 +45,10 @@ function makeTable(firstDay) {
     var table = document.createElement("table");
     var numDays = displayDays(firstDay);
     table = addDays(table, numDays);
+    var pos = 8;
     for (var i = 0, x = 0; i < times.length; x++, i++) {
-        table = addTimes(times[i], table, i);
+        table = addTimes(times[i], table, pos);
+        pos += .5;
     }
     var rep = document.getElementById("form").querySelector("table");
     document.getElementById("form").replaceChild(table, rep);
