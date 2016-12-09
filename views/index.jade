@@ -1,9 +1,15 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  p
-    |sdfsdfsdfsdsdf
-    |sdfsdfsdfsd
+    h2 Welcome to #{title}
+    h3 Please enter the name of your meeting to begin
+    form#newMeet
+        input#meetingName
+        input#create(type="submit")
+    h3 Or search for a meeting by entering the Meeting ID below
+    form#searchMeet
+        input#meetingID
+        input#search(type="submit")
+
+
 
