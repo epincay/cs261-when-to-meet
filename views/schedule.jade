@@ -5,7 +5,8 @@ doctype html
 html
 	head
 		link(rel='stylesheet', type='text/css', href='style.css')
-		script(type='text/javascript', src='calendar.js')
+		link(rel='stylesheet', type='text/css', href='scheduleStyle.css')
+		script(type='text/javascript', src='results.js')
 		script(type='text/javascript', src='mobileTable.js')
 		script.
 			function showWeek() {
@@ -19,7 +20,7 @@ html
 			}
 			function makeCalendar() {
 				document.getElementById("wrapper").style.visibility = "visible";
-			makeTable();
+				makeTable();
 			}
 	body
 		img(src='/public/images/whentomeetLogo.png', style='width: 100px; margin-top: 20px;')
