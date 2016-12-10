@@ -1,15 +1,13 @@
 extends layout
 
 block content
-    h2 Welcome to #{title}
-    h3 Please enter the name of your meeting to begin
-    form#newMeet(method="post" action="createMeeting")
-        input#meetingName(name="meetingName" required)
-        input#create(type="submit")
-    h3 Or search for a meeting by entering the Meeting ID below
-    form#searchMeet
-        input#meetingID
-        input#search(type="")
-
-
-    script(type='text/javascript', src='/javascripts/home.js')
+#wrapper
+        h2 Welcome to #{title}
+        h3 Please enter the name of your meeting to begin
+        form#newMeet(method="post" action="createMeeting")
+            input#meetingName(name="meetingName" required)
+            input#create(type="submit", class="button")
+        h3 Or search for a meeting by entering the Meeting ID below
+        form#searchMeet
+            input#meetingID(name="meetingName" required)
+            input#search(type="submit", class="button")

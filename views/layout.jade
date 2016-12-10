@@ -3,21 +3,18 @@ html
     head
         script(type='text/javascript', src='/javascripts/layout.js')
         title= title
+        meta(name='viewport', content='width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no')
         link(rel='stylesheet', href='/stylesheets/style.css')
     body
-        #header
-            img(src='/images/whentomeetLogo.png', style='width: 50px; margin-top: 20px;')
+        #head
+            img(src='/images/whentomeetLogo.png', style='width: 50px;')
             a#menu(style='height: 50px; width: 50px;')
                 img(style='height: 50px; width: 50px;', src='/images/menu.png')
             #navigate
                 a(href='/')
-                    .button Home
-                a(href='schedule')
-                    .button Schedule
-                a(href='results')
-                    .button My Meeting
+                    .navButton Home
                 a(href='tutorials')
-                    .button Tutorial
+                    .navButton Tutorial
 
 
     block content
