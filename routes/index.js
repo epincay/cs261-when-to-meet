@@ -34,13 +34,13 @@ router.get('/schedule', function (req, res, next) {
             }
         });
 });
-
 /* GET results page.
  * This page will contain the following:
  *  - Table of users and selected times
  *  - Comment section? Bonus feature
  *  - Close meeting button? Bonus feature
  */
+
 router.get('/results', function (req, res, next) {
     console.log("Showing results for meeting:", req.query["meetingId"]);
     models.Meeting.find({ displayId: req.query["meetingId"] })
